@@ -1,0 +1,18 @@
+[Unit]
+Description=Check sample daemon.
+
+[Service]
+Type=exec
+User=pi
+WorkingDirectory=/home/pi/application/
+
+ExecStartPre=python3 -c 'from checksample_com import Status ; Status.setup() ; Status.set_status(Status.UNAVAILABLE)'
+ExecStart=python3 checksample.py daemon
+
+TimeoutStopSec=30
+ExecStopPost=python3 -c 'from checksample_com import Status;Status.setup();Status.set_status(Status.UNAVAILABLE)'
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

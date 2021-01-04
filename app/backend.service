@@ -1,0 +1,13 @@
+[Unit]
+Description=The flask backend of the application.
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/application/
+Environment=FLASK_CONFIG=production
+ExecStart=/usr/bin/python3 app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

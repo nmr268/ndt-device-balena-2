@@ -1,0 +1,3 @@
+[submodule "app/data/newdetect"]
+	path = app/data/newdetect
+	url = https://kpi510@github.com/kpi510/ndt-newdetect.git

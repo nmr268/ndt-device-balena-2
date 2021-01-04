@@ -1,0 +1,7 @@
+# Ignore tmp files from misc. editors
+*swp
+
+# original py file (pre-new-UI)
+*-ORIG.py
+ORIGINAL_FILES/
+TEMP/
